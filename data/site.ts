@@ -195,7 +195,7 @@ export const site: Site = {
   skills: [
     {
       label: "Sistemas",
-      items: ["Dealernet", "SiTef", "Instalação de sistemas"],
+      items: ["Dealernet", "SiTef", "GLPI", "WordPress", "Instalação de sistemas"],
     },
     {
       label: "Redes",
@@ -203,11 +203,21 @@ export const site: Site = {
     },
     {
       label: "Infraestrutura",
-      items: ["Active Directory", "Manutenção de computadores"],
+      items: ["Active Directory", "Manutenção de computadores", "Linux"],
     },
     {
       label: "Desenvolvimento e automação",
-      items: ["Automações em Python", "Desenvolvimento de sistemas"],
+      items: [
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Supabase",
+        "Tauri",
+        "Bun",
+        "npm",
+        "Automações em Python",
+        "Desenvolvimento de sistemas",
+      ],
     },
   ],
 };
