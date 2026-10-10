@@ -54,8 +54,6 @@ export type Experience = {
 export type Site = {
   /** Seu nome completo ou como você quer ser chamado. */
   name: string;
-  /** Suas iniciais — aparecem no avatar e no favicon. */
-  initials: string;
   /** Cargo/título principal. */
   role: string;
   /** URL final do site. */
@@ -107,7 +105,6 @@ const projects: Project[] = [];
 
 export const site: Site = {
   name: "Gabriel Trajano",
-  initials: "GT",
   role: "Analista de T.I",
   url: "https://gbtrajano.github.io",
   email: "conversarcomgabriel@gmail.com",

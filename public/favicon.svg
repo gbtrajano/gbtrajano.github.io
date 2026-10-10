@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <rect width="64" height="64" rx="14" fill="#0a0a0a" />
-  <text x="32" y="42" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">GT</text>
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="17" y="17" width="30" height="30" rx="8" />
+    <path d="M26 8v9M38 8v9M26 47v9M38 47v9M8 26h9M8 38h9M47 26h9M47 38h9" />
+  </g>
+  <rect x="26" y="26" width="12" height="12" rx="3.5" fill="#ffffff" />
 </svg>

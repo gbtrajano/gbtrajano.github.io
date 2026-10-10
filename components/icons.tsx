@@ -18,6 +18,25 @@ const base = {
   focusable: false,
 };
 
+/**
+ * Marca do site: um chip/processador.
+ *
+ * Usado no logo do menu, no card grande do topo e no favicon.
+ * Herda a cor do texto, então funciona nos dois temas sem ajuste.
+ */
+export function ChipIcon({ className }: IconProps) {
+  return (
+    <svg className={className} {...base}>
+      {/* Corpo do chip */}
+      <rect x="5" y="5" width="14" height="14" rx="3.5" />
+      {/* Núcleo preenchido, para dar um ponto focal */}
+      <rect x="9.5" y="9.5" width="5" height="5" rx="1.5" fill="currentColor" stroke="none" />
+      {/* Pinos */}
+      <path d="M9.5 2.5V5M14.5 2.5V5M9.5 19v2.5M14.5 19v2.5M2.5 9.5H5M2.5 14.5H5M19 9.5h2.5M19 14.5h2.5" />
+    </svg>
+  );
+}
+
 export function GithubIcon({ className }: IconProps) {
   return (
     <svg

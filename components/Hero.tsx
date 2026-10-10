@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 import { SocialIcon } from "@/components/SocialIcon";
-import { ArrowUpRightIcon } from "@/components/icons";
+import { ArrowUpRightIcon, ChipIcon } from "@/components/icons";
 
 export function Hero() {
   // Sem projetos cadastrados, o CTA principal aponta para a carreira em vez de
@@ -77,7 +77,7 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Monograma — troque por <img> ou <Image unoptimized> se quiser uma foto sua. */}
+          {/* Marca do site — troque por <img> ou <Image unoptimized> se quiser uma foto sua. */}
           <div className="hidden lg:block">
             <div className="relative">
               <div
@@ -85,9 +85,7 @@ export function Hero() {
                 className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-neutral-900/15 to-neutral-400/10 blur-2xl dark:from-white/10 dark:to-white/5"
               />
               <div className="relative grid h-56 w-56 place-items-center rounded-[2rem] border border-neutral-200/80 bg-white/60 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/60">
-                <span className="bg-gradient-to-br from-neutral-900 to-neutral-500 bg-clip-text text-7xl font-bold text-transparent dark:from-white dark:to-neutral-400">
-                  {site.initials}
-                </span>
+                <ChipIcon className="h-28 w-28 text-neutral-900 dark:text-white" />
               </div>
             </div>
           </div>

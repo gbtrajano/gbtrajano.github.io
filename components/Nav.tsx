@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { CloseIcon, MenuIcon } from "@/components/icons";
+import { ChipIcon, CloseIcon, MenuIcon } from "@/components/icons";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -48,8 +48,8 @@ export function Nav() {
           className="flex items-center gap-2.5 rounded-lg"
           aria-label={`${site.name} — início`}
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-600 text-sm font-bold text-white shadow-lg shadow-neutral-900/20 dark:from-white dark:to-neutral-300 dark:text-neutral-950 dark:shadow-black/20">
-            {site.initials}
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-600 text-white shadow-lg shadow-neutral-900/20 dark:from-white dark:to-neutral-300 dark:text-neutral-950 dark:shadow-black/20">
+            <ChipIcon className="h-5 w-5" />
           </span>
           <span className="text-sm font-semibold text-neutral-900 dark:text-white">
             {site.name}

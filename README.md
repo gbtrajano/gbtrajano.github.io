@@ -97,12 +97,11 @@ Você não precisa tocar em nenhum componente para trocar textos, projetos ou li
 ```ts
 export const site: Site = {
   name: "Seu Nome",              // aparece no menu, no rodapé e no <title>
-  initials: "SN",                // monograma do topo + favicon
-  role: "Desenvolvedor Full Stack",
+  role: "Analista de T.I",
   url: "https://gbtrajano.github.io",
   email: "seu@email.com",
   location: "Rio de Janeiro · Brasil",
-  available: true,               // selo verde "disponível"
+  available: true,               // selo "disponível"
   headline: "…",                 // frase de impacto do topo
   description: "…",              // <meta description> e Open Graph
   bio: ["…", "…"],               // parágrafos da seção "Sobre"
@@ -115,15 +114,15 @@ export const site: Site = {
 };
 ```
 
-Depois de editar `name` ou `initials`, ajuste também:
+Depois de editar `name`, ajuste também:
 
-- **`public/favicon.svg`** — o monograma desenhado à mão (texto `SN`).
+- **`public/favicon.svg`** — o ícone do favicon, desenhado à mão (um chip).
 - **`app/layout.tsx`** — só se você quiser mexer em SEO/Open Graph.
 
-### Trocar o monograma por uma foto
+### Trocar o ícone por uma foto
 
 Em `components/Hero.tsx`, substitua o bloco marcado com o comentário
-`Monograma` por:
+`Marca do site` por:
 
 ```tsx
 <img
@@ -283,7 +282,12 @@ branco sobre preto no escuro. Os gradientes que existiam (indigo → cyan) virar
 gradientes de cinza (`from-neutral-900 to-neutral-500`, invertidos no escuro).
 
 O favicon (`public/favicon.svg`) também é monocromático: quadrado `#0a0a0a`
-com as iniciais em branco.
+com o chip em branco.
+
+O ícone da marca é o `ChipIcon`, em `components/icons.tsx` — um chip/processador
+em SVG inline que herda a cor do texto. Ele aparece no logo do menu, no card
+grande do topo e no favicon. Para trocar por outro desenho, basta substituir o
+`<svg>` dentro do `ChipIcon`.
 
 **Para mudar o tom do cinza:** troque `neutral` por `zinc`, `stone` ou `gray`
 nos arquivos de `components/` — são ~60 ocorrências, um find & replace resolve.
