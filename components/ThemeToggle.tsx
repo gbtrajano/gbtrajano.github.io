@@ -27,7 +27,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label="Alternar entre tema claro e escuro"
       title="Alternar tema"
-      className="grid h-9 w-9 place-items-center rounded-lg text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/70 dark:hover:text-white"
+      className="grid h-9 w-9 place-items-center rounded-lg text-neutral-600 transition hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800/70 dark:hover:text-white"
     >
       <SunIcon className="hidden h-5 w-5 dark:block" />
       <MoonIcon className="block h-5 w-5 dark:hidden" />

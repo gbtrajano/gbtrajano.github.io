@@ -42,7 +42,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+    // neutral-950 — mesma cor do fundo no tema escuro.
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
 };
 
@@ -54,10 +55,10 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="bg-white font-sans text-slate-700 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-300">
+      <body className="bg-white font-sans text-neutral-700 antialiased transition-colors duration-300 dark:bg-neutral-950 dark:text-neutral-300">
         <a
           href="#conteudo"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-indigo-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white dark:focus:bg-white dark:focus:text-neutral-950"
         >
           Pular para o conteúdo
         </a>

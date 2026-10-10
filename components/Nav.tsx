@@ -28,14 +28,14 @@ export function Nav() {
   }, [open]);
 
   const linkClass =
-    "rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/70 dark:hover:text-white";
+    "rounded-lg px-3 py-2 text-sm font-medium text-neutral-600 transition hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800/70 dark:hover:text-white";
 
   return (
     <header
       className={
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300 " +
         (scrolled
-          ? "border-b border-slate-200/80 bg-white/80 backdrop-blur-lg dark:border-slate-800/80 dark:bg-slate-950/80"
+          ? "border-b border-neutral-200/80 bg-white/80 backdrop-blur-lg dark:border-neutral-800/80 dark:bg-neutral-950/80"
           : "border-b border-transparent")
       }
     >
@@ -48,10 +48,10 @@ export function Nav() {
           className="flex items-center gap-2.5 rounded-lg"
           aria-label={`${site.name} — início`}
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 text-sm font-bold text-white shadow-lg shadow-indigo-500/20">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-600 text-sm font-bold text-white shadow-lg shadow-neutral-900/20 dark:from-white dark:to-neutral-300 dark:text-neutral-950 dark:shadow-black/20">
             {site.initials}
           </span>
-          <span className="text-sm font-semibold text-slate-900 dark:text-white">
+          <span className="text-sm font-semibold text-neutral-900 dark:text-white">
             {site.name}
           </span>
         </a>
@@ -63,7 +63,7 @@ export function Nav() {
               {item.label}
             </a>
           ))}
-          <span aria-hidden="true" className="mx-2 h-5 w-px bg-slate-200 dark:bg-slate-800" />
+          <span aria-hidden="true" className="mx-2 h-5 w-px bg-neutral-200 dark:bg-neutral-800" />
           <ThemeToggle />
         </div>
 
@@ -76,7 +76,7 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="menu-mobile"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
-            className="grid h-9 w-9 place-items-center rounded-lg text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/70 dark:hover:text-white"
+            className="grid h-9 w-9 place-items-center rounded-lg text-neutral-600 transition hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800/70 dark:hover:text-white"
           >
             {open ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
           </button>
@@ -86,14 +86,14 @@ export function Nav() {
       {open && (
         <div
           id="menu-mobile"
-          className="border-t border-slate-200/80 bg-white/95 px-6 pb-4 pt-2 backdrop-blur-lg sm:hidden dark:border-slate-800/80 dark:bg-slate-950/95"
+          className="border-t border-neutral-200/80 bg-white/95 px-6 pb-4 pt-2 backdrop-blur-lg sm:hidden dark:border-neutral-800/80 dark:bg-neutral-950/95"
         >
           {site.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800/70"
+              className="block rounded-lg px-3 py-3 text-base font-medium text-neutral-700 transition hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800/70"
             >
               {item.label}
             </a>

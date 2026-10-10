@@ -13,12 +13,12 @@ export function Skills() {
         {site.skills.map((group) => (
           <div
             key={group.label}
-            className="rounded-2xl border border-slate-200/80 bg-slate-50/50 p-6 dark:border-slate-800 dark:bg-slate-900/40"
+            className="rounded-2xl border border-neutral-200/80 bg-neutral-50/50 p-6 dark:border-neutral-800 dark:bg-neutral-900/40"
           >
-            <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
+            <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">
               <span
                 aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-400"
+                className="h-1.5 w-1.5 rounded-full bg-neutral-900 dark:bg-white"
               />
               {group.label}
             </h3>
@@ -26,7 +26,7 @@ export function Skills() {
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 transition hover:border-indigo-300 hover:text-indigo-700 dark:border-slate-700/70 dark:bg-slate-800/60 dark:text-slate-300 dark:hover:border-indigo-500/50 dark:hover:text-indigo-300"
+                  className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 transition hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-700/70 dark:bg-neutral-800/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
                 >
                   {item}
                 </li>

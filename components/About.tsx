@@ -14,7 +14,7 @@ export function About() {
           {site.bio.map((paragraph, index) => (
             <p
               key={index}
-              className="text-base leading-relaxed text-slate-600 text-pretty dark:text-slate-400"
+              className="text-base leading-relaxed text-neutral-600 text-pretty dark:text-neutral-400"
             >
               {paragraph}
             </p>
@@ -25,14 +25,14 @@ export function About() {
           {site.stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-2xl border border-slate-200/80 bg-slate-50/60 p-5 dark:border-slate-800 dark:bg-slate-900/40"
+              className="rounded-2xl border border-neutral-200/80 bg-neutral-50/60 p-5 dark:border-neutral-800 dark:bg-neutral-900/40"
             >
               <dt className="sr-only">{stat.label}</dt>
               <dd>
-                <span className="block text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+                <span className="block text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
                   {stat.value}
                 </span>
-                <span className="mt-1 block text-xs font-medium leading-snug text-slate-500 dark:text-slate-400">
+                <span className="mt-1 block text-xs font-medium leading-snug text-neutral-500 dark:text-neutral-400">
                   {stat.label}
                 </span>
               </dd>

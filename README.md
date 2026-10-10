@@ -205,6 +205,35 @@ A variante do Tailwind v4 que habilita isso está em `globals.css`:
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
+### Paleta de cores (monocromática)
+
+O visual é **preto e branco**: não há nenhuma cor com matiz — nem indigo, nem
+azul, nem verde. Tudo usa a escala `neutral` do Tailwind.
+
+| Papel | Tema claro | Tema escuro |
+|---|---|---|
+| Fundo da página | `bg-white` | `bg-neutral-950` (`#0a0a0a`) |
+| Superfícies / cards | `bg-neutral-50` | `bg-neutral-900` |
+| Bordas | `border-neutral-200` | `border-neutral-800` |
+| Texto principal | `text-neutral-900` | `text-white` |
+| Texto secundário | `text-neutral-600` | `text-neutral-400` |
+| Destaque / hover | `bg-neutral-900` | `bg-white` |
+
+O destaque é sempre o **inverso** do fundo: preto sobre branco no tema claro,
+branco sobre preto no escuro. Os gradientes que existiam (indigo → cyan) viraram
+gradientes de cinza (`from-neutral-900 to-neutral-500`, invertidos no escuro).
+
+O favicon (`public/favicon.svg`) também é monocromático: quadrado `#0a0a0a`
+com as iniciais em branco.
+
+**Para mudar o tom do cinza:** troque `neutral` por `zinc`, `stone` ou `gray`
+nos arquivos de `components/` — são ~60 ocorrências, um find & replace resolve.
+
+**Para reintroduzir uma cor de acento:** troque as ocorrências de
+`hover:border-neutral-900 hover:text-neutral-900 dark:hover:border-white
+dark:hover:text-white` pela cor desejada, e ajuste `::selection` e
+`:focus-visible` em `app/globals.css`.
+
 ---
 
 ## 7. Limitações do `output: "export"` (importante)

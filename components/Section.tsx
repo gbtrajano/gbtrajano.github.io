@@ -10,17 +10,17 @@ export function Section({ id, kicker, title, description, children }: SectionPro
   return (
     <section
       id={id}
-      className="scroll-mt-20 border-t border-slate-200/70 py-20 sm:py-24 dark:border-slate-800/70"
+      className="scroll-mt-20 border-t border-neutral-200/70 py-20 sm:py-24 dark:border-neutral-800/70"
     >
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
           {kicker}
         </p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl dark:text-white">
           {title}
         </h2>
         {description && (
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
             {description}
           </p>
         )}

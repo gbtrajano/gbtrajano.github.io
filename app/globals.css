@@ -44,12 +44,18 @@
     }
   }
 
+  /* Paleta monocromática: seleção em cinza neutro, sem matiz. */
   ::selection {
-    background-color: color-mix(in oklab, var(--color-indigo-500) 30%, transparent);
+    background-color: color-mix(in oklab, var(--color-neutral-400) 45%, transparent);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-indigo-500);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: 2px;
+  }
+
+  /* No tema escuro o anel de foco precisa clarear para manter contraste. */
+  .dark :focus-visible {
+    outline-color: white;
   }
 }
