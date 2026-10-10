@@ -174,7 +174,7 @@ Se ficar `stats: []`, o bloco **não é renderizado** e a bio ocupa a largura to
 o layout se adapta, nada quebra. Preencha só com números que você consiga
 defender numa entrevista.
 
-### Seção de projetos (carrossel)
+### Seção de projetos (letreiro contínuo)
 
 `projects` é o único campo que mora **fora** do objeto `site`, numa constante
 logo acima dele:
@@ -183,18 +183,30 @@ logo acima dele:
 const projects: Project[] = [ /* ... */ ];
 ```
 
-A seção `#projetos` renderiza esses itens num **carrossel**:
+A seção `#projetos` renderiza esses itens num **letreiro que desliza sem parar**,
+da direita para a esquerda. Não precisa clicar em nada e não existe botão de
+avançar.
 
-- avança sozinho a cada **6 segundos** (constante `INTERVALO` em
-  `components/Projects.tsx`);
-- **pausa** com o mouse em cima ou com o foco em qualquer link do slide;
-- tem setas, contador (`3 / 8`) e bolinhas clicáveis;
-- aceita **arrastar para o lado** no celular;
-- **não roda sozinho** para quem tem "reduzir movimento" ligado no sistema
-  operacional — nesse caso as setas continuam funcionando.
+**Como o loop é invisível:** a lista é renderizada **duas vezes** lado a lado e a
+animação desloca o trilho em `-50%` — exatamente a largura de uma cópia. No fim
+da animação o quadro é idêntico ao inicial, então o reinício não aparece. É por
+isso que o espaçamento entre os cards é `margin-right` e não `gap`: com `gap`
+sobraria meio espaço na emenda e o letreiro daria um pulo a cada volta.
 
-Os slides fora da tela recebem `inert`, então não são lidos por leitores de tela
-nem recebem foco pelo teclado.
+**Velocidade:** a duração é calculada a partir da quantidade de projetos
+(`SEGUNDOS_POR_PROJETO` em `components/Projects.tsx`, hoje `5`), então a
+velocidade é constante — adicionar projetos **não** acelera o giro.
+
+**Pausa:** o letreiro para quando o mouse está em cima ou quando um link recebe
+foco pelo teclado. Isso é necessário: sem a pausa seria impossível clicar num
+card, porque o link sairia debaixo do cursor. Para nunca pausar, remova as duas
+classes `[animation-play-state:paused]` do trilho.
+
+Os cards da segunda cópia recebem `inert` — são apenas visuais, então não são
+lidos por leitores de tela nem recebem foco.
+
+Quem tem "reduzir movimento" ligado no sistema operacional vê a faixa **parada**
+(a regra em `globals.css` zera a duração das animações).
 
 Se a lista ficar vazia:
 
@@ -206,13 +218,13 @@ Campos de cada projeto:
 
 | Campo | Obrigatório | Efeito |
 |---|---|---|
-| `title` | sim | Título do slide |
+| `title` | sim | Título do card |
 | `summary` | sim | Uma ou duas frases sobre o problema que resolve |
 | `tags` | sim | Chips de tecnologia |
 | `year` | sim | Selo com o ano |
-| `href` | não | Botão "Ver online" |
+| `href` | não | Link "Ver online" |
 | `repo` | não | Link "Código" |
-| `featured` | não | Selo "Destaque" no slide |
+| `featured` | não | Selo "Destaque" no card |
 
 ### Redes de contato (com item "em breve")
 

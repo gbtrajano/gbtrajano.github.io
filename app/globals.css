@@ -12,6 +12,15 @@
   --animate-fade-up: fade-up 0.6s ease-out both;
 
   /*
+   * Letreiro de projetos.
+   *
+   * A duração real é definida inline em components/Projects.tsx, para a
+   * VELOCIDADE ficar constante quando a quantidade de projetos muda — com
+   * duração fixa, adicionar projetos aceleraria o giro. Este valor é o padrão.
+   */
+  --animate-marquee: marquee 40s linear infinite;
+
+  /*
    * Duração de TODA transição de hover/foco do site.
    *
    * O padrão do Tailwind é 150ms — rápido demais para troca de borda e de cor
@@ -29,6 +38,20 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+/*
+ * O trilho tem DUAS cópias da lista, então deslocar -50% equivale a exatamente
+ * uma cópia. No fim da animação o quadro é idêntico ao inicial e o reinício
+ * passa despercebido — é isso que faz o letreiro parecer infinito.
+ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

@@ -133,19 +133,3 @@ export function CloseIcon({ className }: IconProps) {
     </svg>
   );
 }
-
-export function ChevronLeftIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} strokeWidth={2}>
-      <path d="m15 5-7 7 7 7" />
-    </svg>
-  );
-}
-
-export function ChevronRightIcon({ className }: IconProps) {
-  return (
-    <svg className={className} {...base} strokeWidth={2}>
-      <path d="m9 5 7 7-7 7" />
-    </svg>
-  );
-}
