@@ -111,7 +111,7 @@ export const site: Site = {
   nav: [{ label: "Sobre", href: "#sobre" }],
   socials: [{ label: "GitHub", href: "…", icon: "github" }],
   projects: [{ title: "…", summary: "…", tags: ["…"], year: "2025", href: "…", repo: "…" }],
-  skills: [{ label: "Suporte ao usuário", items: ["Windows", "Redes"] }],
+  skills: [{ label: "Redes", items: ["DHCP", "Switches"] }],
 };
 ```
 

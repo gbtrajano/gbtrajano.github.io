@@ -191,46 +191,23 @@ export const site: Site = {
 
   projects,
 
-  /**
-   * ⚠️  REVISE ISTO.
-   *
-   * Escrevi um ponto de partida para T.I, mas eu NÃO sei quais ferramentas você
-   * usa de verdade. Remova o que não usa e acrescente o que usa — em entrevista
-   * você vai ter que falar sobre cada item desta lista.
-   */
+  /** Skills informadas pelo Gabriel. */
   skills: [
     {
-      label: "Suporte ao usuário",
-      items: [
-        "Atendimento e help desk",
-        "Manutenção de hardware",
-        "Windows",
-        "Pacote Office",
-        "Impressoras e periféricos",
-      ],
+      label: "Sistemas",
+      items: ["Dealernet", "SiTef", "Instalação de sistemas"],
     },
     {
-      label: "Infraestrutura e redes",
-      items: [
-        "Redes TCP/IP",
-        "Wi-Fi",
-        "Cabeamento estruturado",
-        "Backup",
-        "Active Directory",
-      ],
+      label: "Redes",
+      items: ["TCP/IP", "DHCP", "Switches", "Cabeamento estruturado", "Endereçamento IP"],
     },
     {
-      label: "Sistemas e ferramentas",
-      items: ["Microsoft 365", "ERP", "Gestão de chamados", "Linux", "Virtualização"],
+      label: "Infraestrutura",
+      items: ["Active Directory", "Manutenção de computadores"],
     },
     {
-      label: "Como eu trabalho",
-      items: [
-        "Documentação",
-        "Investigação de causa raiz",
-        "Priorização de chamados",
-        "Comunicação com usuários",
-      ],
+      label: "Desenvolvimento e automação",
+      items: ["Automações em Python", "Desenvolvimento de sistemas"],
     },
   ],
 };
