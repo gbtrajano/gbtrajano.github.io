@@ -67,7 +67,18 @@
       scroll-behavior: auto;
     }
 
-    *,
+    /*
+     * EXCEÇÃO CONSCIENTE: o letreiro de projetos (#projetos) deve girar sempre,
+     * inclusive aqui. Foi uma escolha explícita do dono do site.
+     *
+     * A exclusão é necessária porque `!important` ganha de estilo inline — sem
+     * o `:not()`, o `animation-duration: 0.01ms` abaixo venceria o valor que o
+     * componente define e o letreiro ficaria parado.
+     *
+     * Todo o resto do site continua respeitando a preferência, incluindo as
+     * transições de hover.
+     */
+    *:not(.animate-marquee),
     *::before,
     *::after {
       animation-duration: 0.01ms !important;

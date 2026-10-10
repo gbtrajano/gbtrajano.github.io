@@ -205,15 +205,24 @@ classes `[animation-play-state:paused]` do trilho.
 Os cards da segunda cópia recebem `inert` — são apenas visuais, então não são
 lidos por leitores de tela nem recebem foco.
 
-Quem tem "reduzir movimento" ligado no sistema operacional **não vê o letreiro
-andando**: a animação só é aplicada com `motion-safe:`. Nesse caso a faixa vira
-uma lista com **rolagem horizontal** e a segunda cópia dos cards some — sem isso
-os projetos que passam da largura da tela ficariam inalcançáveis, porque o
-container recorta o conteúdo.
+**Exceção consciente:** o letreiro anda **mesmo para quem tem "reduzir movimento"
+ligado** no sistema. Foi uma escolha explícita do dono do site, e ela vive em
+dois lugares que precisam andar juntos:
 
-Se você **não vê o letreiro se mexer** mas quer ver, confira se os efeitos de
-animação do sistema estão ligados (no Windows: Configurações → Acessibilidade →
-Efeitos visuais → Efeitos de animação).
+- `animate-marquee`, **sem** o prefixo `motion-safe:`, em `components/Projects.tsx`;
+- o `:not(.animate-marquee)` na regra de `prefers-reduced-motion` de
+  `app/globals.css`.
+
+O `:not()` é necessário porque `!important` ganha de estilo inline: sem ele, o
+`animation-duration: 0.01ms` da regra global venceria a duração que o componente
+define e o letreiro ficaria parado de qualquer jeito.
+
+Para voltar a respeitar a preferência, reverta os dois pontos **e** devolva o
+`motion-reduce:overflow-x-auto` no container — sem animação, os cards que passam
+da largura da tela ficariam inalcançáveis, porque o container recorta o conteúdo.
+
+Todo o resto do site (transições de hover, foco, o fade do topo) continua
+respeitando "reduzir movimento" normalmente.
 
 Se a lista ficar vazia:
 
