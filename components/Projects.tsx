@@ -24,6 +24,12 @@ const SEGUNDOS_POR_PROJETO = 5;
  * Sem isso seria impossível clicar num card, porque o link sairia debaixo do
  * cursor. Para nunca pausar, basta remover as duas classes de
  * `animation-play-state` abaixo.
+ *
+ * Quem tem "reduzir movimento" ligado no sistema NÃO vê o letreiro andando: a
+ * animação só é aplicada com `motion-safe:`. Nesse caso a faixa vira uma lista
+ * com ROLAGEM HORIZONTAL e a segunda cópia some — senão os projetos que passam
+ * da largura da tela ficariam inalcançáveis, já que o container recorta o
+ * conteúdo e não haveria como chegar neles.
  */
 export function Projects() {
   const total = site.projects.length;
@@ -36,9 +42,9 @@ export function Projects() {
       title="Coisas que eu construí"
       description="Uma seleção do que considero mais representativo do meu trabalho."
     >
-      <div className="overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50/40 py-8 dark:border-neutral-800 dark:bg-neutral-900/30 [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]">
+      <div className="overflow-hidden rounded-3xl border border-neutral-200/80 bg-neutral-50/40 py-8 motion-reduce:overflow-x-auto motion-reduce:[mask-image:none] dark:border-neutral-800 dark:bg-neutral-900/30 [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]">
         <div
-          className="flex w-max animate-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]"
+          className="flex w-max motion-safe:animate-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]"
           style={{ animationDuration: `${total * SEGUNDOS_POR_PROJETO}s` }}
         >
           {[...site.projects, ...site.projects].map((projeto, indice) => (
@@ -46,7 +52,11 @@ export function Projects() {
               key={`${projeto.title}-${indice}`}
               /* A segunda cópia é só visual: não deve ser lida nem focável. */
               inert={indice >= total}
-              className="mr-6 flex w-72 shrink-0 flex-col rounded-2xl border border-neutral-200/80 bg-white p-6 sm:w-80 dark:border-neutral-800 dark:bg-neutral-900/60"
+              className={
+                "mr-6 flex w-72 shrink-0 flex-col rounded-2xl border border-neutral-200/80 bg-white p-6 sm:w-80 dark:border-neutral-800 dark:bg-neutral-900/60" +
+                /* Sem animação, a segunda cópia só faria a pessoa rolar duas vezes. */
+                (indice >= total ? " motion-reduce:hidden" : "")
+              }
             >
               <div className="flex items-center gap-2">
                 <span className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[11px] font-medium text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">

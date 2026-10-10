@@ -205,8 +205,15 @@ classes `[animation-play-state:paused]` do trilho.
 Os cards da segunda cópia recebem `inert` — são apenas visuais, então não são
 lidos por leitores de tela nem recebem foco.
 
-Quem tem "reduzir movimento" ligado no sistema operacional vê a faixa **parada**
-(a regra em `globals.css` zera a duração das animações).
+Quem tem "reduzir movimento" ligado no sistema operacional **não vê o letreiro
+andando**: a animação só é aplicada com `motion-safe:`. Nesse caso a faixa vira
+uma lista com **rolagem horizontal** e a segunda cópia dos cards some — sem isso
+os projetos que passam da largura da tela ficariam inalcançáveis, porque o
+container recorta o conteúdo.
+
+Se você **não vê o letreiro se mexer** mas quer ver, confira se os efeitos de
+animação do sistema estão ligados (no Windows: Configurações → Acessibilidade →
+Efeitos visuais → Efeitos de animação).
 
 Se a lista ficar vazia:
 
