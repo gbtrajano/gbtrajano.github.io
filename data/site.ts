@@ -143,9 +143,9 @@ export const site: Site = {
   /**
    * Trajetória profissional — do mais recente para o mais antigo.
    *
-   * TODO: quando confirmar as datas, preencha `period` em cada item. Ex.:
-   *   period: "mar 2023 — jul 2025"
-   * Enquanto `period` estiver ausente, o selo de data não aparece.
+   * As datas vieram de memória ("mais ou menos"), então vale conferir quando
+   * você tiver os registros em mãos. O selo de período só aparece quando
+   * `period` está preenchido.
    *
    * TODO (opcional): adicione `highlights` com 2 ou 3 bullets do que você fazia.
    */
@@ -153,8 +153,8 @@ export const site: Site = {
     {
       role: "Analista de T.I",
       company: "Genial Veículos",
+      period: "desde out 2026",
       current: true,
-      // period: "mês/ano — atual",
       // highlights: [
       //   "O que você faz no dia a dia.",
       //   "Algum projeto, melhoria ou resultado concreto.",
@@ -163,13 +163,13 @@ export const site: Site = {
     {
       role: "Auxiliar de T.I",
       company: "Genial Veículos",
-      // period: "mês/ano — mês/ano",
+      period: "mar 2026 — out 2026",
     },
     {
       role: "Auxiliar de T.I",
       company: "Aeroporto Santos Dumont",
       location: "Rio de Janeiro · RJ",
-      // period: "mês/ano — mês/ano",
+      period: "jan 2025 — nov 2025",
     },
   ],
 
