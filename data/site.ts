@@ -184,8 +184,7 @@ export const site: Site = {
 
   socials: [
     { label: "GitHub", href: "https://github.com/gbtrajano", icon: "github" },
-    // TODO: troque pelo seu perfil real (ou apague esta linha se não usar LinkedIn).
-    { label: "LinkedIn", href: "https://linkedin.com/in/SEU-USUARIO", icon: "linkedin" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/gbtrajano/", icon: "linkedin" },
     { label: "E-mail", href: "mailto:conversarcomgabriel@gmail.com", icon: "mail" },
   ],
 
