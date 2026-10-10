@@ -14,7 +14,7 @@ export function Skills() {
           <div
             key={group.label}
             className={
-              "rounded-2xl border border-neutral-200/80 bg-neutral-50/50 p-6 dark:border-neutral-800 dark:bg-neutral-900/40" +
+              "rounded-2xl border border-neutral-200/80 bg-neutral-50/50 p-6 transition hover:border-neutral-300 hover:shadow-lg hover:shadow-neutral-900/5 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:border-neutral-700" +
               // Grupo com muitos itens ocupa a linha inteira: assim a grade de
               // 2 colunas não fica com um buraco quando o total de grupos é ímpar.
               (group.items.length > 6 ? " sm:col-span-2" : "")
@@ -31,7 +31,7 @@ export function Skills() {
               {group.items.map((item) => (
                 <li
                   key={item}
-                  className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 transition hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-700/70 dark:bg-neutral-800/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
+                  className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-700 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 hover:shadow-md hover:shadow-neutral-900/10 dark:border-neutral-700/70 dark:bg-neutral-800/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
                 >
                   {item}
                 </li>

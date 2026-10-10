@@ -24,9 +24,9 @@ export function Contact() {
 
           <a
             href={`mailto:${site.email}`}
-            className="group mt-3 inline-flex items-center gap-3 text-xl font-semibold text-neutral-900 transition hover:text-neutral-500 sm:text-3xl dark:text-white dark:hover:text-neutral-400"
+            className="group mt-3 inline-flex items-center gap-3 text-xl font-semibold text-neutral-900 transition hover:-translate-y-0.5 hover:text-neutral-500 sm:text-3xl dark:text-white dark:hover:text-neutral-400"
           >
-            <MailIcon className="h-6 w-6 shrink-0 text-neutral-900 sm:h-8 sm:w-8 dark:text-white" />
+            <MailIcon className="h-6 w-6 shrink-0 text-neutral-900 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 sm:h-8 sm:w-8 dark:text-white" />
             <span className="break-all">{site.email}</span>
           </a>
 
@@ -39,9 +39,12 @@ export function Contact() {
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noreferrer noopener" : undefined}
-                  className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-4 py-2.5 text-sm font-medium text-neutral-700 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
+                  className="group inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-4 py-2.5 text-sm font-medium text-neutral-700 transition hover:-translate-y-1 hover:border-neutral-900 hover:text-neutral-900 hover:shadow-lg hover:shadow-neutral-900/10 active:translate-y-0 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
                 >
-                  <SocialIcon icon={social.icon} className="h-4 w-4" />
+                  <SocialIcon
+                    icon={social.icon}
+                    className="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
+                  />
                   {social.label}
                 </a>
               ))}
