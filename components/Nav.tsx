@@ -45,10 +45,10 @@ export function Nav() {
       >
         <a
           href="#home"
-          className="group flex items-center gap-2.5 rounded-lg"
+          className="flex items-center gap-2.5 rounded-lg"
           aria-label={`${site.name} — início`}
         >
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-600 text-sm font-bold text-white shadow-lg shadow-neutral-900/20 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 dark:from-white dark:to-neutral-300 dark:text-neutral-950 dark:shadow-black/20">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-600 text-sm font-bold text-white shadow-lg shadow-neutral-900/20 dark:from-white dark:to-neutral-300 dark:text-neutral-950 dark:shadow-black/20">
             {site.initials}
           </span>
           <span className="text-sm font-semibold text-neutral-900 dark:text-white">

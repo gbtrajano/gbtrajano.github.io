@@ -46,14 +46,14 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href={cta.href}
-                className="group inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-neutral-900/10 transition hover:-translate-y-0.5 hover:bg-neutral-700 hover:shadow-xl hover:shadow-neutral-900/25 active:translate-y-0 active:scale-[0.98] dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200"
+                className="group inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-neutral-900/10 transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200"
               >
                 {cta.label}
-                <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a
                 href="#contato"
-                className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 px-5 py-3 text-sm font-semibold text-neutral-900 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:bg-neutral-50 hover:shadow-lg hover:shadow-neutral-900/5 active:translate-y-0 active:scale-[0.98] dark:border-neutral-700 dark:text-white dark:hover:border-white dark:hover:bg-neutral-900"
+                className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 px-5 py-3 text-sm font-semibold text-neutral-900 transition hover:border-neutral-900 hover:bg-neutral-50 dark:border-neutral-700 dark:text-white dark:hover:border-white dark:hover:bg-neutral-900"
               >
                 Falar comigo
               </a>
@@ -68,7 +68,7 @@ export function Hero() {
                     rel={social.href.startsWith("http") ? "noreferrer noopener" : undefined}
                     aria-label={social.label}
                     title={social.label}
-                    className="grid h-11 w-11 place-items-center rounded-xl border border-neutral-200 text-neutral-500 transition hover:-translate-y-1 hover:border-neutral-900 hover:text-neutral-900 hover:shadow-lg hover:shadow-neutral-900/10 active:translate-y-0 active:scale-95 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-white dark:hover:text-white"
+                    className="grid h-11 w-11 place-items-center rounded-xl border border-neutral-200 text-neutral-500 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-white dark:hover:text-white"
                   >
                     <SocialIcon icon={social.icon} className="h-5 w-5" />
                   </a>
@@ -79,13 +79,13 @@ export function Hero() {
 
           {/* Monograma — troque por <img> ou <Image unoptimized> se quiser uma foto sua. */}
           <div className="hidden lg:block">
-            <div className="group relative">
+            <div className="relative">
               <div
                 aria-hidden="true"
-                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-neutral-900/15 to-neutral-400/10 blur-2xl transition-opacity duration-500 group-hover:opacity-60 dark:from-white/10 dark:to-white/5"
+                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-neutral-900/15 to-neutral-400/10 blur-2xl dark:from-white/10 dark:to-white/5"
               />
-              <div className="relative grid h-56 w-56 place-items-center rounded-[2rem] border border-neutral-200/80 bg-white/60 backdrop-blur-sm transition-transform duration-500 group-hover:scale-[1.03] dark:border-neutral-800 dark:bg-neutral-900/60">
-                <span className="bg-gradient-to-br from-neutral-900 to-neutral-500 bg-clip-text text-7xl font-bold text-transparent transition-transform duration-500 group-hover:scale-105 dark:from-white dark:to-neutral-400">
+              <div className="relative grid h-56 w-56 place-items-center rounded-[2rem] border border-neutral-200/80 bg-white/60 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/60">
+                <span className="bg-gradient-to-br from-neutral-900 to-neutral-500 bg-clip-text text-7xl font-bold text-transparent dark:from-white dark:to-neutral-400">
                   {site.initials}
                 </span>
               </div>

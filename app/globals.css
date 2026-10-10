@@ -10,15 +10,6 @@
     "Liberation Mono", monospace;
 
   --animate-fade-up: fade-up 0.6s ease-out both;
-
-  /*
-   * Hovers mais suaves.
-   * Estes dois valores são o padrão que TODO utilitário `transition-*` do
-   * Tailwind usa — mudando aqui, o site inteiro ganha a mesma cadência.
-   * A curva é um ease-out mais acentuado: sai rápido e freia no fim.
-   */
-  --default-transition-duration: 250ms;
-  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes fade-up {
