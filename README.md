@@ -111,7 +111,7 @@ export const site: Site = {
   nav: [{ label: "Sobre", href: "#sobre" }],
   socials: [{ label: "GitHub", href: "…", icon: "github" }],
   projects: [{ title: "…", summary: "…", tags: ["…"], year: "2025", href: "…", repo: "…" }],
-  skills: [{ label: "Front-end", items: ["TypeScript", "React"] }],
+  skills: [{ label: "Suporte ao usuário", items: ["Windows", "Redes"] }],
 };
 ```
 
@@ -175,6 +175,26 @@ Se ficar `stats: []`, o bloco **não é renderizado** e a bio ocupa a largura to
 o layout se adapta, nada quebra. Preencha só com números que você consiga
 defender numa entrevista.
 
+### Seção de projetos (opcional)
+
+`projects` é o único campo que mora **fora** do objeto `site`, numa constante
+logo acima dele:
+
+```ts
+const projects: Project[] = [];   // ← preencha aqui
+```
+
+Enquanto a lista estiver vazia:
+
+- a seção `#projetos` **não é renderizada**;
+- o link "Projetos" **não aparece no menu**.
+
+Preencha a lista e as duas coisas voltam sozinhas — não precisa mexer em mais nada.
+
+Vale trabalho de T.I, não só software: padronização do parque de máquinas,
+estruturação de rede, implantação de ERP, rotina de backup, automação de tarefa
+repetitiva (script, PowerShell, planilha).
+
 ---
 
 ## 5. Domínio próprio (opcional)
@@ -216,7 +236,7 @@ a cada deploy.
 │   ├── Hero.tsx           # topo: nome, cargo, CTAs, redes
 │   ├── About.tsx          # bio + números
 │   ├── Experience.tsx     # linha do tempo de carreira
-│   ├── Projects.tsx       # cards de projeto
+│   ├── Projects.tsx       # cards de projeto (só renderiza se houver projetos)
 │   ├── Skills.tsx         # grupos de tecnologias
 │   ├── Contact.tsx        # CTA final
 │   ├── Footer.tsx

@@ -78,6 +78,33 @@ export type Site = {
   skills: SkillGroup[];
 };
 
+/* ------------------------------------------------------------------ *
+ * SEUS PROJETOS
+ *
+ * Enquanto esta lista estiver vazia, a seção "Projetos" e o link dela no
+ * menu NÃO aparecem. É de propósito: melhor não mostrar nada do que mostrar
+ * placeholder.
+ *
+ * Para ativar: preencha a lista. A seção e o link do menu voltam sozinhos,
+ * não precisa mexer em mais nada.
+ *
+ * Vale trabalho de T.I, não só software. Exemplos do que serve:
+ *   - Padronização / criação de imagem do parque de máquinas
+ *   - Estruturação ou migração de rede
+ *   - Implantação de sistema, ERP ou ferramenta de chamados
+ *   - Rotina de backup e recuperação
+ *   - Automação de tarefa repetitiva (script, planilha, PowerShell)
+ *
+ * Modelo:
+ *   {
+ *     title: "Padronização do parque de máquinas",
+ *     summary: "O que você fez e qual problema resolveu. Foque no resultado.",
+ *     tags: ["Windows", "Implantação", "Documentação"],
+ *     year: "2025",
+ *   },
+ * ------------------------------------------------------------------ */
+const projects: Project[] = [];
+
 export const site: Site = {
   name: "Gabriel Trajano",
   initials: "GT",
@@ -149,7 +176,8 @@ export const site: Site = {
   nav: [
     { label: "Sobre", href: "#sobre" },
     { label: "Carreira", href: "#carreira" },
-    { label: "Projetos", href: "#projetos" },
+    // Entra sozinho quando houver projetos na lista lá em cima.
+    ...(projects.length > 0 ? [{ label: "Projetos", href: "#projetos" }] : []),
     { label: "Skills", href: "#skills" },
     { label: "Contato", href: "#contato" },
   ],
@@ -161,42 +189,7 @@ export const site: Site = {
     { label: "E-mail", href: "mailto:conversarcomgabriel@gmail.com", icon: "mail" },
   ],
 
-  projects: [
-    {
-      title: "Nome do Projeto Um",
-      summary:
-        "Descrição curta e direta do que o projeto faz e qual problema ele resolve. Foque no resultado, não na lista de tecnologias.",
-      tags: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
-      year: "2025",
-      href: "https://exemplo.com",
-      repo: "https://github.com/gbtrajano/projeto-um",
-      featured: true,
-    },
-    {
-      title: "Nome do Projeto Dois",
-      summary:
-        "Outro projeto de destaque. Uma ou duas frases explicando o impacto: quantos usuários, quanto tempo economizou, qual métrica melhorou.",
-      tags: ["React", "Node.js", "Redis"],
-      year: "2024",
-      repo: "https://github.com/gbtrajano/projeto-dois",
-    },
-    {
-      title: "Nome do Projeto Três",
-      summary:
-        "Projeto pessoal, open source ou freelance. Vale incluir mesmo que seja pequeno, se mostrar bem uma habilidade.",
-      tags: ["Bun", "Hono", "SQLite"],
-      year: "2024",
-      href: "https://exemplo.com",
-    },
-    {
-      title: "Nome do Projeto Quatro",
-      summary:
-        "Descreva o desafio técnico mais interessante e como você resolveu. Isso diferencia um portfólio de uma lista de links.",
-      tags: ["TypeScript", "Tailwind", "Vitest"],
-      year: "2023",
-      repo: "https://github.com/gbtrajano/projeto-quatro",
-    },
-  ],
+  projects,
 
   /**
    * ⚠️  REVISE ISTO.
