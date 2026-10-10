@@ -1,7 +1,7 @@
 /**
  * ⚠️  ESTE É O ÚNICO ARQUIVO QUE VOCÊ PRECISA EDITAR.
  *
- * Todo o conteúdo do portfólio (nome, textos, projetos, skills, links)
+ * Todo o conteúdo do portfólio (nome, textos, carreira, projetos, skills, links)
  * vive aqui. Os componentes apenas renderizam estes dados.
  */
 
@@ -31,6 +31,26 @@ export type SkillGroup = {
   items: string[];
 };
 
+export type Experience = {
+  /** Cargo, ex.: "Analista de T.I". */
+  role: string;
+  /** Empresa, ex.: "Genial Veículos". */
+  company: string;
+  /**
+   * Período exibido, ex.: "jan 2023 — ago 2024".
+   *
+   * Deixe de fora enquanto não tiver confirmado as datas: o selo de período
+   * simplesmente não é renderizado. Nada de placeholder feio no site.
+   */
+  period?: string;
+  /** Local, ex.: "Rio de Janeiro · RJ". Opcional. */
+  location?: string;
+  /** Marque true no trabalho atual: exibe o selo "Atual". */
+  current?: boolean;
+  /** Bullets curtos sobre o que você fazia. Opcional. */
+  highlights?: string[];
+};
+
 export type Site = {
   /** Seu nome completo ou como você quer ser chamado. */
   name: string;
@@ -50,6 +70,7 @@ export type Site = {
   description: string;
   bio: string[];
   stats: { value: string; label: string }[];
+  experience: Experience[];
   nav: { label: string; href: string }[];
   socials: Social[];
   projects: Project[];
@@ -82,8 +103,42 @@ export const site: Site = {
     { value: "100%", label: "remoto ou híbrido" },
   ],
 
+  /**
+   * Trajetória profissional — do mais recente para o mais antigo.
+   *
+   * TODO: quando confirmar as datas, preencha `period` em cada item. Ex.:
+   *   period: "mar 2023 — jul 2025"
+   * Enquanto `period` estiver ausente, o selo de data não aparece.
+   *
+   * TODO (opcional): adicione `highlights` com 2 ou 3 bullets do que você fazia.
+   */
+  experience: [
+    {
+      role: "Analista de T.I",
+      company: "Genial Veículos",
+      current: true,
+      // period: "mês/ano — atual",
+      // highlights: [
+      //   "O que você faz no dia a dia.",
+      //   "Algum projeto, melhoria ou resultado concreto.",
+      // ],
+    },
+    {
+      role: "Auxiliar de T.I",
+      company: "Genial Veículos",
+      // period: "mês/ano — mês/ano",
+    },
+    {
+      role: "Auxiliar de T.I",
+      company: "Aeroporto Santos Dumont",
+      location: "Rio de Janeiro · RJ",
+      // period: "mês/ano — mês/ano",
+    },
+  ],
+
   nav: [
     { label: "Sobre", href: "#sobre" },
+    { label: "Carreira", href: "#carreira" },
     { label: "Projetos", href: "#projetos" },
     { label: "Skills", href: "#skills" },
     { label: "Contato", href: "#contato" },

@@ -107,6 +107,7 @@ export const site: Site = {
   description: "…",              // <meta description> e Open Graph
   bio: ["…", "…"],               // parágrafos da seção "Sobre"
   stats: [{ value: "5+", label: "anos de experiência" }],
+  experience: [{ role: "…", company: "…", period: "…", current: true }],
   nav: [{ label: "Sobre", href: "#sobre" }],
   socials: [{ label: "GitHub", href: "…", icon: "github" }],
   projects: [{ title: "…", summary: "…", tags: ["…"], year: "2025", href: "…", repo: "…" }],
@@ -136,6 +137,28 @@ Em `components/Hero.tsx`, substitua o bloco marcado com o comentário
 
 Coloque o arquivo em `public/eu.jpg`. Use `<img>` comum: com `output: "export"`
 o `next/image` não otimiza nada mesmo (`images.unoptimized` já está ligado).
+
+### Seção de carreira
+
+A seção `#carreira` renderiza o campo `experience` como uma linha do tempo,
+do mais recente para o mais antigo:
+
+```ts
+experience: [
+  { role: "Analista de T.I", company: "Genial Veículos", current: true },
+  { role: "Auxiliar de T.I", company: "Genial Veículos", period: "mar 2023 — jul 2025" },
+  { role: "Auxiliar de T.I", company: "Aeroporto Santos Dumont", location: "Rio de Janeiro · RJ" },
+],
+```
+
+| Campo | Obrigatório | Efeito |
+|---|---|---|
+| `role` | sim | Cargo em destaque |
+| `company` | sim | Empresa, logo abaixo do cargo |
+| `period` | não | Selo com o período. **Se estiver ausente, o selo não aparece** — dá para publicar sem as datas e preencher depois |
+| `current` | não | Mostra o selo "Atual" e preenche a bolinha da linha do tempo |
+| `location` | não | Local, exibido depois da empresa |
+| `highlights` | não | Lista de bullets com o que você fazia na função |
 
 ---
 
@@ -177,6 +200,7 @@ a cada deploy.
 │   ├── Nav.tsx            # menu fixo + menu mobile (client)
 │   ├── Hero.tsx           # topo: nome, cargo, CTAs, redes
 │   ├── About.tsx          # bio + números
+│   ├── Experience.tsx     # linha do tempo de carreira
 │   ├── Projects.tsx       # cards de projeto
 │   ├── Skills.tsx         # grupos de tecnologias
 │   ├── Contact.tsx        # CTA final
