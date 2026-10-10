@@ -62,7 +62,7 @@ export const site: Site = {
   role: "Desenvolvedor Full Stack",
   url: "https://gbtrajano.github.io",
   email: "conversarcomgabriel@gmail.com",
-  location: "São Paulo · Brasil", // TODO: ajuste para a sua cidade
+  location: "Rio de Janeiro · Brasil",
   available: true,
 
   headline: "Eu construo interfaces rápidas e produtos que escalam.", // TODO: seu texto

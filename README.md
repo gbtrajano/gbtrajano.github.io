@@ -101,7 +101,7 @@ export const site: Site = {
   role: "Desenvolvedor Full Stack",
   url: "https://gbtrajano.github.io",
   email: "seu@email.com",
-  location: "São Paulo · Brasil",
+  location: "Rio de Janeiro · Brasil",
   available: true,               // selo verde "disponível"
   headline: "…",                 // frase de impacto do topo
   description: "…",              // <meta description> e Open Graph

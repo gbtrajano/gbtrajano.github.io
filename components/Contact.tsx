@@ -48,7 +48,7 @@ export function Contact() {
           </div>
 
           <p className="mt-8 text-sm text-neutral-500 dark:text-neutral-400">
-            Também estou em {site.location}. Costumo responder em até 24h.
+            {site.location}. Costumo responder em até 24 horas.
           </p>
         </div>
       </div>
