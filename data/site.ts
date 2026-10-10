@@ -5,7 +5,7 @@
  * vive aqui. Os componentes apenas renderizam estes dados.
  */
 
-export type SocialIcon = "github" | "linkedin" | "mail" | "whatsapp";
+export type SocialIcon = "github" | "linkedin" | "mail";
 
 export type Social = {
   label: string;
@@ -94,8 +94,6 @@ export const site: Site = {
     // TODO: troque pelo seu perfil real (ou apague esta linha se não usar LinkedIn).
     { label: "LinkedIn", href: "https://linkedin.com/in/SEU-USUARIO", icon: "linkedin" },
     { label: "E-mail", href: "mailto:conversarcomgabriel@gmail.com", icon: "mail" },
-    // TODO: troque pelo seu número com DDI + DDD, só dígitos (ex.: 5511987654321).
-    { label: "WhatsApp", href: "https://wa.me/5511999999999", icon: "whatsapp" },
   ],
 
   projects: [
