@@ -87,29 +87,97 @@ export type Site = {
 /* ------------------------------------------------------------------ *
  * SEUS PROJETOS
  *
- * Enquanto esta lista estiver vazia, a seção "Projetos" e o link dela no
- * menu NÃO aparecem. É de propósito: melhor não mostrar nada do que mostrar
- * placeholder.
+ * Esta lista alimenta o carrossel da seção "Projetos". Se ficar vazia, a
+ * seção e o link dela no menu NÃO aparecem — melhor não mostrar nada do que
+ * mostrar placeholder.
  *
- * Para ativar: preencha a lista. A seção e o link do menu voltam sozinhos,
- * não precisa mexer em mais nada.
+ * Os itens abaixo vieram dos seus repositórios públicos do GitHub, com o
+ * resumo baseado no README de cada um. REVISE: corte o que não quiser
+ * mostrar, ajuste os textos e acrescente o que faltar.
  *
- * Vale trabalho de T.I, não só software. Exemplos do que serve:
- *   - Padronização / criação de imagem do parque de máquinas
- *   - Estruturação ou migração de rede
- *   - Implantação de sistema, ERP ou ferramenta de chamados
- *   - Rotina de backup e recuperação
- *   - Automação de tarefa repetitiva (script, planilha, PowerShell)
+ * Campos:
+ *   title     nome do projeto                              (obrigatório)
+ *   summary   1 ou 2 frases sobre o problema que resolve   (obrigatório)
+ *   tags      tecnologias, viram chips                     (obrigatório)
+ *   year      ano mostrado no selo                         (obrigatório)
+ *   href      link do projeto em produção                  (opcional)
+ *   repo      link do repositório                          (opcional)
+ *   featured  true mostra o selo "Destaque" no slide        (opcional)
  *
- * Modelo:
- *   {
- *     title: "Padronização do parque de máquinas",
- *     summary: "O que você fez e qual problema resolveu. Foque no resultado.",
- *     tags: ["Windows", "Implantação", "Documentação"],
- *     year: "2025",
- *   },
+ * O carrossel avança sozinho a cada 6s, pausa no hover/foco e não roda
+ * sozinho para quem tem "reduzir movimento" ligado no sistema operacional.
  * ------------------------------------------------------------------ */
-const projects: Project[] = [];
+const projects: Project[] = [
+  {
+    title: "SimplificaPDV",
+    summary:
+      "Ponto de venda desktop e instalável — não é sistema web. O banco SQLite fica no computador do próprio cliente, sem servidor, e o aplicativo se atualiza sozinho por atualização remota assinada.",
+    tags: ["Tauri", "Rust", "React", "TypeScript", "SQLite"],
+    year: "2026",
+    repo: "https://github.com/gbtrajano/simplificaoficina",
+    featured: true,
+  },
+  {
+    title: "Ateliê — E-commerce de moda",
+    summary:
+      "E-commerce de moda feminina em Next.js: carrinho persistente com Zustand, cálculo de frete por API Route e a estrutura pronta para webhooks de pagamento e logística reversa.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
+    year: "2026",
+    href: "https://armariodalilly.vercel.app",
+    repo: "https://github.com/gbtrajano/armariodalilly",
+  },
+  {
+    title: "OrçaFácil",
+    summary:
+      "Emissor de orçamentos, pedidos e recibos para autônomos. Os dados ficam no computador do usuário (sem estoque, sem nuvem), o PDF sai com o logotipo do profissional e o histórico de clientes guarda todos os documentos.",
+    tags: ["Tauri", "TypeScript", "SQLite"],
+    year: "2026",
+    repo: "https://github.com/gbtrajano/orcafacil",
+  },
+  {
+    title: "ÓticaOS — Gestão para óticas",
+    summary:
+      "Sistema de gestão para óticas: o orçamento vira ordem de serviço em um clique, as OS são acompanhadas por status (Solicitado → Laboratório → Pronto → Concluído) e o estoque avisa quando bate o mínimo.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    year: "2026",
+    href: "https://frevo-os.vercel.app",
+    repo: "https://github.com/gbtrajano/FrevoOS",
+  },
+  {
+    title: "Músicas Potenza",
+    summary:
+      "Reprodutor de música para loja com painel de controle remoto: o operador troca a faixa de onde estiver e o player em tela cheia da loja atualiza na hora, via Socket.IO.",
+    tags: ["Node.js", "Express", "Socket.IO", "JavaScript"],
+    year: "2026",
+    repo: "https://github.com/gbtrajano/musicaspotenza",
+  },
+  {
+    title: "Potenza TI — Inventário",
+    summary:
+      "Inventário de T.I com banco de dados local: dashboard com estatísticas, filtros por loja, tipo e departamento, e backup do banco pela própria interface.",
+    tags: ["Next.js", "TypeScript", "SQLite"],
+    year: "2026",
+    href: "https://inventory-test-kappa.vercel.app",
+    repo: "https://github.com/gbtrajano/potenza-inventory",
+  },
+  {
+    title: "Arcana — Cursos de tarô",
+    summary:
+      "Plataforma de cursos com catálogo, página de vendas, checkout por Mercado Pago ou Stripe e área do aluno. Autenticação, dados e arquivos no Supabase.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Bun"],
+    year: "2026",
+    href: "https://tarot-bruna.vercel.app",
+    repo: "https://github.com/gbtrajano/tarot-bruna",
+  },
+  {
+    title: "Calculadora de Combustível",
+    summary:
+      "Calculadora que estima o custo de uma viagem a partir da distância, do consumo médio do veículo e do preço do litro, com opção de ida e volta. Feita em HTML, CSS e JavaScript puros.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    year: "2024",
+    repo: "https://github.com/gbtrajano/CalculadoraCombustivel",
+  },
+];
 
 export const site: Site = {
   name: "Gabriel Trajano",

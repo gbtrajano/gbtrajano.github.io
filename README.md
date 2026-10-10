@@ -174,25 +174,45 @@ Se ficar `stats: []`, o bloco **não é renderizado** e a bio ocupa a largura to
 o layout se adapta, nada quebra. Preencha só com números que você consiga
 defender numa entrevista.
 
-### Seção de projetos (opcional)
+### Seção de projetos (carrossel)
 
 `projects` é o único campo que mora **fora** do objeto `site`, numa constante
 logo acima dele:
 
 ```ts
-const projects: Project[] = [];   // ← preencha aqui
+const projects: Project[] = [ /* ... */ ];
 ```
 
-Enquanto a lista estiver vazia:
+A seção `#projetos` renderiza esses itens num **carrossel**:
+
+- avança sozinho a cada **6 segundos** (constante `INTERVALO` em
+  `components/Projects.tsx`);
+- **pausa** com o mouse em cima ou com o foco em qualquer link do slide;
+- tem setas, contador (`3 / 8`) e bolinhas clicáveis;
+- aceita **arrastar para o lado** no celular;
+- **não roda sozinho** para quem tem "reduzir movimento" ligado no sistema
+  operacional — nesse caso as setas continuam funcionando.
+
+Os slides fora da tela recebem `inert`, então não são lidos por leitores de tela
+nem recebem foco pelo teclado.
+
+Se a lista ficar vazia:
 
 - a seção `#projetos` **não é renderizada**;
-- o link "Projetos" **não aparece no menu**.
+- o link "Projetos" **não aparece no menu**;
+- o botão principal do topo passa a apontar para a carreira.
 
-Preencha a lista e as duas coisas voltam sozinhas — não precisa mexer em mais nada.
+Campos de cada projeto:
 
-Vale trabalho de T.I, não só software: padronização do parque de máquinas,
-estruturação de rede, implantação de ERP, rotina de backup, automação de tarefa
-repetitiva (script, PowerShell, planilha).
+| Campo | Obrigatório | Efeito |
+|---|---|---|
+| `title` | sim | Título do slide |
+| `summary` | sim | Uma ou duas frases sobre o problema que resolve |
+| `tags` | sim | Chips de tecnologia |
+| `year` | sim | Selo com o ano |
+| `href` | não | Botão "Ver online" |
+| `repo` | não | Link "Código" |
+| `featured` | não | Selo "Destaque" no slide |
 
 ### Redes de contato (com item "em breve")
 
