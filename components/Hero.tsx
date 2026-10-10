@@ -3,6 +3,13 @@ import { SocialIcon } from "@/components/SocialIcon";
 import { ArrowUpRightIcon } from "@/components/icons";
 
 export function Hero() {
+  // Sem projetos cadastrados, o CTA principal aponta para a carreira em vez de
+  // levar a uma âncora que não existe.
+  const cta =
+    site.projects.length > 0
+      ? { label: "Ver projetos", href: "#projetos" }
+      : { label: "Ver minha trajetória", href: "#carreira" };
+
   return (
     <section id="home" className="relative isolate overflow-hidden pt-16">
       {/* Fundo decorativo monocromático: dois brilhos neutros + grade com máscara radial. */}
@@ -38,10 +45,10 @@ export function Hero() {
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
-                href="#projetos"
+                href={cta.href}
                 className="group inline-flex items-center gap-2 rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-neutral-900/10 transition hover:bg-neutral-700 dark:bg-white dark:text-neutral-950 dark:shadow-white/10 dark:hover:bg-neutral-200"
               >
-                Ver projetos
+                {cta.label}
                 <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a
