@@ -5,11 +5,19 @@
  * vive aqui. Os componentes apenas renderizam estes dados.
  */
 
-export type SocialIcon = "github" | "linkedin" | "mail";
+export type SocialIcon = "github" | "linkedin" | "instagram" | "mail";
 
 export type Social = {
   label: string;
-  href: string;
+  /**
+   * OPCIONAL, de propósito.
+   *
+   * Sem `href`, o item é exibido mas fica desabilitado: sem link, sem hover e
+   * sem foco pelo teclado. É o caso do Instagram, que ainda será criado.
+   * Assim que você preencher o href, ele vira um link sozinho — não precisa
+   * mexer em nenhum componente.
+   */
+  href?: string;
   icon: SocialIcon;
 };
 
@@ -182,6 +190,10 @@ export const site: Site = {
   socials: [
     { label: "GitHub", href: "https://github.com/gbtrajano", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/gbtrajano/", icon: "linkedin" },
+    // TODO: quando criar o Instagram profissional, adicione o href assim:
+    //   { label: "Instagram", href: "https://instagram.com/seu-usuario", icon: "instagram" },
+    // Enquanto não houver href, ele aparece como "em breve" e não é clicável.
+    { label: "Instagram", icon: "instagram" },
     { label: "E-mail", href: "mailto:conversarcomgabriel@gmail.com", icon: "mail" },
   ],
 

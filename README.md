@@ -194,6 +194,24 @@ Vale trabalho de T.I, não só software: padronização do parque de máquinas,
 estruturação de rede, implantação de ERP, rotina de backup, automação de tarefa
 repetitiva (script, PowerShell, planilha).
 
+### Redes de contato (com item "em breve")
+
+Em `socials`, o campo `href` é **opcional**. Um item sem `href` continua
+aparecendo no site, mas fica desabilitado: borda tracejada, cor apagada, sem
+clique, sem hover e sem foco pelo teclado.
+
+```ts
+socials: [
+  { label: "GitHub", href: "https://github.com/gbtrajano", icon: "github" },
+  { label: "Instagram", icon: "instagram" },   // ← sem href = "em breve"
+],
+```
+
+É assim que o Instagram está hoje, esperando o perfil profissional. **Para
+ativar, basta adicionar o `href`** — o item vira um link clicável sozinho, sem
+tocar em nenhum componente. As opções de `icon` são `github`, `linkedin`,
+`instagram` e `mail`.
+
 ---
 
 ## 5. Domínio próprio (opcional)

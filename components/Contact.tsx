@@ -33,18 +33,33 @@ export function Contact() {
           <div className="mt-8 flex flex-wrap gap-3">
             {site.socials
               .filter((social) => social.icon !== "mail")
-              .map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target={social.href.startsWith("http") ? "_blank" : undefined}
-                  rel={social.href.startsWith("http") ? "noreferrer noopener" : undefined}
-                  className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-4 py-2.5 text-sm font-medium text-neutral-700 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
-                >
-                  <SocialIcon icon={social.icon} className="h-4 w-4" />
-                  {social.label}
-                </a>
-              ))}
+              .map((social) =>
+                social.href ? (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target={social.href.startsWith("http") ? "_blank" : undefined}
+                    rel={social.href.startsWith("http") ? "noreferrer noopener" : undefined}
+                    className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-4 py-2.5 text-sm font-medium text-neutral-700 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300 dark:hover:border-white dark:hover:text-white"
+                  >
+                    <SocialIcon icon={social.icon} className="h-4 w-4" />
+                    {social.label}
+                  </a>
+                ) : (
+                  /* Ainda sem link: fica visível, mas sem hover e sem clique. */
+                  <span
+                    key={social.label}
+                    title={`${social.label} — em breve`}
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl border border-dashed border-neutral-300 px-4 py-2.5 text-sm font-medium text-neutral-400 dark:border-neutral-700 dark:text-neutral-500"
+                  >
+                    <SocialIcon icon={social.icon} className="h-4 w-4" />
+                    {social.label}
+                    <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
+                      Em breve
+                    </span>
+                  </span>
+                ),
+              )}
           </div>
 
           <p className="mt-8 text-sm text-neutral-500 dark:text-neutral-400">

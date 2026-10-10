@@ -60,20 +60,33 @@ export function Hero() {
             </div>
 
             <ul className="mt-10 flex items-center gap-2">
-              {site.socials.map((social) => (
-                <li key={social.label}>
-                  <a
-                    href={social.href}
-                    target={social.href.startsWith("http") ? "_blank" : undefined}
-                    rel={social.href.startsWith("http") ? "noreferrer noopener" : undefined}
-                    aria-label={social.label}
-                    title={social.label}
-                    className="grid h-11 w-11 place-items-center rounded-xl border border-neutral-200 text-neutral-500 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-white dark:hover:text-white"
-                  >
-                    <SocialIcon icon={social.icon} className="h-5 w-5" />
-                  </a>
-                </li>
-              ))}
+              {site.socials.map((social) =>
+                social.href ? (
+                  <li key={social.label}>
+                    <a
+                      href={social.href}
+                      target={social.href.startsWith("http") ? "_blank" : undefined}
+                      rel={social.href.startsWith("http") ? "noreferrer noopener" : undefined}
+                      aria-label={social.label}
+                      title={social.label}
+                      className="grid h-11 w-11 place-items-center rounded-xl border border-neutral-200 text-neutral-500 transition hover:-translate-y-0.5 hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-white dark:hover:text-white"
+                    >
+                      <SocialIcon icon={social.icon} className="h-5 w-5" />
+                    </a>
+                  </li>
+                ) : (
+                  /* Ainda sem link: aparece, mas não é link nem recebe foco pelo teclado. */
+                  <li key={social.label}>
+                    <span
+                      title={`${social.label} — em breve`}
+                      className="grid h-11 w-11 cursor-not-allowed place-items-center rounded-xl border border-dashed border-neutral-300 text-neutral-300 dark:border-neutral-700 dark:text-neutral-600"
+                    >
+                      <SocialIcon icon={social.icon} className="h-5 w-5" />
+                      <span className="sr-only">{social.label} — em breve</span>
+                    </span>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
