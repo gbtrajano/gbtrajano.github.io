@@ -1,0 +1,17 @@
+# Normaliza o fim de linha para LF no repositório, independente do SO.
+# Sem isso, o Git no Windows converte tudo para CRLF e gera diffs barulhentos.
+* text=auto eol=lf
+
+# Scripts do Windows precisam continuar em CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binários: o Git não deve tentar normalizar.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+
+# Lockfiles: tratados como gerados, para não poluir revisões.
+bun.lock linguist-generated=true
