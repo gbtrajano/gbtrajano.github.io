@@ -195,7 +195,7 @@ export const site: Site = {
   skills: [
     {
       label: "Sistemas",
-      items: ["Dealernet", "SiTef", "GLPI", "WordPress", "Instalação de sistemas"],
+      items: ["Dealernet", "SiTef", "Holmes", "GLPI", "WordPress", "Instalação de sistemas"],
     },
     {
       label: "Redes",
@@ -204,6 +204,10 @@ export const site: Site = {
     {
       label: "Infraestrutura",
       items: ["Active Directory", "Manutenção de computadores", "Linux"],
+    },
+    {
+      label: "Suporte remoto",
+      items: ["AnyDesk", "UltraVNC"],
     },
     {
       label: "Desenvolvimento e automação",

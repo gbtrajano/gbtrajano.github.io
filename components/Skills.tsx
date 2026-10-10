@@ -13,7 +13,12 @@ export function Skills() {
         {site.skills.map((group) => (
           <div
             key={group.label}
-            className="rounded-2xl border border-neutral-200/80 bg-neutral-50/50 p-6 dark:border-neutral-800 dark:bg-neutral-900/40"
+            className={
+              "rounded-2xl border border-neutral-200/80 bg-neutral-50/50 p-6 dark:border-neutral-800 dark:bg-neutral-900/40" +
+              // Grupo com muitos itens ocupa a linha inteira: assim a grade de
+              // 2 colunas não fica com um buraco quando o total de grupos é ímpar.
+              (group.items.length > 6 ? " sm:col-span-2" : "")
+            }
           >
             <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">
               <span
