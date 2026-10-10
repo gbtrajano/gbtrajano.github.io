@@ -1,6 +1,6 @@
 import { site } from "@/data/site";
 import { Section } from "@/components/Section";
-import { ExternalLinkIcon, GithubIcon } from "@/components/icons";
+import { ExternalLinkIcon } from "@/components/icons";
 
 /** Segundos que um projeto leva para atravessar a tela. */
 const SEGUNDOS_POR_PROJETO = 5;
@@ -88,30 +88,22 @@ export function Projects() {
                 ))}
               </ul>
 
-              {(projeto.href || projeto.repo) && (
-                <div className="mt-5 flex items-center gap-4 border-t border-neutral-200/80 pt-4 dark:border-neutral-800">
-                  {projeto.href && (
-                    <a
-                      href={projeto.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 transition hover:text-neutral-500 dark:text-white dark:hover:text-neutral-400"
-                    >
-                      <ExternalLinkIcon className="h-4 w-4" />
-                      Ver online
-                    </a>
-                  )}
-                  {projeto.repo && (
-                    <a
-                      href={projeto.repo}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-600 transition hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-                    >
-                      <GithubIcon className="h-4 w-4" />
-                      Código
-                    </a>
-                  )}
+              {/*
+                Só existe link para o projeto publicado. Não há botão de código:
+                os repositórios são privados, então o link daria 404. Projetos
+                sem `href` (desktop, uso interno) ficam sem botão nenhum.
+              */}
+              {projeto.href && (
+                <div className="mt-5 border-t border-neutral-200/80 pt-4 dark:border-neutral-800">
+                  <a
+                    href={projeto.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 transition hover:text-neutral-500 dark:text-white dark:hover:text-neutral-400"
+                  >
+                    <ExternalLinkIcon className="h-4 w-4" />
+                    Ver online
+                  </a>
                 </div>
               )}
             </article>

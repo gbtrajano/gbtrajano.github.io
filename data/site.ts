@@ -26,10 +26,13 @@ export type Project = {
   summary: string;
   tags: string[];
   year: string;
-  /** Link do site/app em produção (opcional). */
+  /**
+   * Link do projeto publicado (opcional).
+   *
+   * Não existe campo para o repositório de propósito: os repositórios são
+   * privados, então um link para o código daria 404 para quem visita.
+   */
   href?: string;
-  /** Link do repositório (opcional). */
-  repo?: string;
   /** Marque como true para dar destaque visual no card. */
   featured?: boolean;
 };
@@ -87,25 +90,26 @@ export type Site = {
 /* ------------------------------------------------------------------ *
  * SEUS PROJETOS
  *
- * Esta lista alimenta o carrossel da seção "Projetos". Se ficar vazia, a
- * seção e o link dela no menu NÃO aparecem — melhor não mostrar nada do que
- * mostrar placeholder.
+ * Esta lista alimenta o letreiro da seção "Projetos". Se ficar vazia, a seção
+ * e o link dela no menu NÃO aparecem — melhor não mostrar nada do que mostrar
+ * placeholder.
  *
- * Os itens abaixo vieram dos seus repositórios públicos do GitHub, com o
- * resumo baseado no README de cada um. REVISE: corte o que não quiser
- * mostrar, ajuste os textos e acrescente o que faltar.
+ * Os itens abaixo vieram dos seus repositórios do GitHub, com o resumo baseado
+ * no README de cada um. REVISE: corte o que não quiser mostrar, ajuste os
+ * textos e acrescente o que faltar.
+ *
+ * Os repositórios são privados, então NÃO existe campo de link para o código:
+ * o único botão possível é o de ver o projeto publicado. Projetos sem `href`
+ * aparecem sem botão nenhum — é o caso de quem roda local ou é aplicativo
+ * desktop, como o SimplificaPDV e o OrçaFácil.
  *
  * Campos:
  *   title     nome do projeto                              (obrigatório)
  *   summary   1 ou 2 frases sobre o problema que resolve   (obrigatório)
  *   tags      tecnologias, viram chips                     (obrigatório)
  *   year      ano mostrado no selo                         (obrigatório)
- *   href      link do projeto em produção                  (opcional)
- *   repo      link do repositório                          (opcional)
- *   featured  true mostra o selo "Destaque" no slide        (opcional)
- *
- * O carrossel avança sozinho a cada 6s, pausa no hover/foco e não roda
- * sozinho para quem tem "reduzir movimento" ligado no sistema operacional.
+ *   href      link do projeto publicado                    (opcional)
+ *   featured  true mostra o selo "Destaque" no card         (opcional)
  * ------------------------------------------------------------------ */
 const projects: Project[] = [
   {
@@ -114,7 +118,6 @@ const projects: Project[] = [
       "Ponto de venda desktop e instalável — não é sistema web. O banco SQLite fica no computador do próprio cliente, sem servidor, e o aplicativo se atualiza sozinho por atualização remota assinada.",
     tags: ["Tauri", "Rust", "React", "TypeScript", "SQLite"],
     year: "2026",
-    repo: "https://github.com/gbtrajano/simplificaoficina",
     featured: true,
   },
   {
@@ -124,7 +127,6 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
     year: "2026",
     href: "https://armariodalilly.vercel.app",
-    repo: "https://github.com/gbtrajano/armariodalilly",
   },
   {
     title: "OrçaFácil",
@@ -132,7 +134,6 @@ const projects: Project[] = [
       "Emissor de orçamentos, pedidos e recibos para autônomos. Os dados ficam no computador do usuário (sem estoque, sem nuvem), o PDF sai com o logotipo do profissional e o histórico de clientes guarda todos os documentos.",
     tags: ["Tauri", "TypeScript", "SQLite"],
     year: "2026",
-    repo: "https://github.com/gbtrajano/orcafacil",
   },
   {
     title: "ÓticaOS — Gestão para óticas",
@@ -141,7 +142,6 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
     year: "2026",
     href: "https://frevo-os.vercel.app",
-    repo: "https://github.com/gbtrajano/FrevoOS",
   },
   {
     title: "Músicas Potenza",
@@ -149,7 +149,6 @@ const projects: Project[] = [
       "Reprodutor de música para loja com painel de controle remoto: o operador troca a faixa de onde estiver e o player em tela cheia da loja atualiza na hora, via Socket.IO.",
     tags: ["Node.js", "Express", "Socket.IO", "JavaScript"],
     year: "2026",
-    repo: "https://github.com/gbtrajano/musicaspotenza",
   },
   {
     title: "Potenza TI — Inventário",
@@ -158,7 +157,6 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "SQLite"],
     year: "2026",
     href: "https://inventory-test-kappa.vercel.app",
-    repo: "https://github.com/gbtrajano/potenza-inventory",
   },
   {
     title: "Arcana — Cursos de tarô",
@@ -167,7 +165,6 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Supabase", "Bun"],
     year: "2026",
     href: "https://tarot-bruna.vercel.app",
-    repo: "https://github.com/gbtrajano/tarot-bruna",
   },
   {
     title: "Calculadora de Combustível",
@@ -175,7 +172,6 @@ const projects: Project[] = [
       "Calculadora que estima o custo de uma viagem a partir da distância, do consumo médio do veículo e do preço do litro, com opção de ida e volta. Feita em HTML, CSS e JavaScript puros.",
     tags: ["HTML", "CSS", "JavaScript"],
     year: "2024",
-    repo: "https://github.com/gbtrajano/CalculadoraCombustivel",
   },
 ];
 

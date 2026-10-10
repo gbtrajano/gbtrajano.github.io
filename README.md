@@ -238,9 +238,13 @@ Campos de cada projeto:
 | `summary` | sim | Uma ou duas frases sobre o problema que resolve |
 | `tags` | sim | Chips de tecnologia |
 | `year` | sim | Selo com o ano |
-| `href` | não | Link "Ver online" |
-| `repo` | não | Link "Código" |
+| `href` | não | Botão "Ver online" |
 | `featured` | não | Selo "Destaque" no card |
+
+Não existe campo para o repositório **de propósito**: com os repositórios
+privados, um link para o código daria 404 para quem visita o portfólio. Projetos
+sem `href` aparecem **sem botão nenhum** — é o caso dos que rodam local ou são
+aplicativo desktop.
 
 ### Redes de contato (com item "em breve")
 
