@@ -58,17 +58,18 @@ export type Site = {
   initials: string;
   /** Cargo/título principal. */
   role: string;
-  /** URL final do site. Troque "SEU-USUARIO" pelo seu usuário do GitHub. */
+  /** URL final do site. */
   url: string;
   email: string;
   location: string;
-  /** Se true, mostra o selo verde "disponível". */
+  /** Se true, mostra o selo "disponível". */
   available: boolean;
   /** Frase de impacto do topo. */
   headline: string;
   /** Descrição usada no <meta description> e no Open Graph. */
   description: string;
   bio: string[];
+  /** Números do bloco "Sobre". Se ficar vazio, o bloco não é renderizado. */
   stats: { value: string; label: string }[];
   experience: Experience[];
   nav: { label: string; href: string }[];
@@ -80,28 +81,37 @@ export type Site = {
 export const site: Site = {
   name: "Gabriel Trajano",
   initials: "GT",
-  role: "Desenvolvedor Full Stack",
+  role: "Analista de T.I",
   url: "https://gbtrajano.github.io",
   email: "conversarcomgabriel@gmail.com",
   location: "Rio de Janeiro · Brasil",
   available: true,
 
-  headline: "Eu construo interfaces rápidas e produtos que escalam.", // TODO: seu texto
+  // TODO: escreva com as suas palavras. Esta é só uma sugestão de tom.
+  headline: "Mantenho a infraestrutura de pé e as pessoas trabalhando.",
   description:
-    "Portfólio de Gabriel Trajano — desenvolvedor full stack especializado em TypeScript, React, Next.js e Node.js.",
+    "Portfólio de Gabriel Trajano — Analista de T.I no Rio de Janeiro, com experiência em suporte a usuários e infraestrutura.",
 
   bio: [
-    "Sou desenvolvedor full stack com foco em aplicações web de ponta a ponta: da modelagem de dados à interface final. Gosto de trabalhar perto do produto, entendendo o problema antes de escolher a stack.",
-    "Meu dia a dia é TypeScript, React e Next.js no front, Node.js e PostgreSQL no back. Tenho interesse especial em performance, acessibilidade e design systems — coisas que o usuário não vê, mas sente.",
-    "Fora do trabalho, contribuo com projetos open source e escrevo sobre o que aprendo construindo.",
+    "Sou Analista de T.I e aprendi o ofício na prática: comecei como auxiliar, atendendo usuário e resolvendo problema no chão, e hoje respondo pela operação de T.I na Genial Veículos.",
+    "Meu dia a dia passa por suporte a usuários, manutenção de equipamentos, redes e sistemas. Gosto da parte que ninguém vê: documentar o que foi feito, buscar a causa raiz em vez de só apagar o incêndio, e deixar a operação um pouco mais estável a cada semana.",
+    "Trabalho bem com pessoas — boa parte de resolver T.I é traduzir o problema de quem não é técnico e dar um retorno claro sobre quando aquilo vai ser resolvido.",
   ],
 
-  stats: [
-    { value: "5+", label: "anos de experiência" },
-    { value: "30+", label: "projetos entregues" },
-    { value: "12", label: "tecnologias no stack" },
-    { value: "100%", label: "remoto ou híbrido" },
-  ],
+  /**
+   * Deixei este bloco VAZIO de propósito.
+   *
+   * Números como "5+ anos" ou "30+ projetos" são afirmações sobre a sua carreira,
+   * e eu não tenho como saber os seus. Inventar aqui é pior do que não mostrar nada.
+   *
+   * Enquanto estiver vazio, o bloco não aparece e a bio ocupa a largura toda.
+   * Preencha só com o que você conseguir defender numa entrevista. Ex.:
+   *
+   *   { value: "3+", label: "anos em T.I" },
+   *   { value: "120", label: "usuários atendidos" },
+   *   { value: "2", label: "empresas" },
+   */
+  stats: [],
 
   /**
    * Trajetória profissional — do mais recente para o mais antigo.
@@ -188,22 +198,46 @@ export const site: Site = {
     },
   ],
 
+  /**
+   * ⚠️  REVISE ISTO.
+   *
+   * Escrevi um ponto de partida para T.I, mas eu NÃO sei quais ferramentas você
+   * usa de verdade. Remova o que não usa e acrescente o que usa — em entrevista
+   * você vai ter que falar sobre cada item desta lista.
+   */
   skills: [
     {
-      label: "Front-end",
-      items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "HTML semântico", "Acessibilidade"],
+      label: "Suporte ao usuário",
+      items: [
+        "Atendimento e help desk",
+        "Manutenção de hardware",
+        "Windows",
+        "Pacote Office",
+        "Impressoras e periféricos",
+      ],
     },
     {
-      label: "Back-end",
-      items: ["Node.js", "Bun", "REST", "GraphQL", "PostgreSQL", "Prisma"],
+      label: "Infraestrutura e redes",
+      items: [
+        "Redes TCP/IP",
+        "Wi-Fi",
+        "Cabeamento estruturado",
+        "Backup",
+        "Active Directory",
+      ],
     },
     {
-      label: "Infra & DevOps",
-      items: ["Git", "GitHub Actions", "Docker", "Vercel", "Linux", "Cloudflare"],
+      label: "Sistemas e ferramentas",
+      items: ["Microsoft 365", "ERP", "Gestão de chamados", "Linux", "Virtualização"],
     },
     {
-      label: "Práticas",
-      items: ["Testes (Vitest, Playwright)", "Design System", "Code Review", "Performance Web", "Scrum"],
+      label: "Como eu trabalho",
+      items: [
+        "Documentação",
+        "Investigação de causa raiz",
+        "Priorização de chamados",
+        "Comunicação com usuários",
+      ],
     },
   ],
 };

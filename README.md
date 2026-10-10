@@ -160,6 +160,21 @@ experience: [
 | `location` | não | Local, exibido depois da empresa |
 | `highlights` | não | Lista de bullets com o que você fazia na função |
 
+### Bloco de números (opcional)
+
+`stats` alimenta os cartões numéricos da seção Sobre:
+
+```ts
+stats: [
+  { value: "3+", label: "anos em T.I" },
+  { value: "120", label: "usuários atendidos" },
+],
+```
+
+Se ficar `stats: []`, o bloco **não é renderizado** e a bio ocupa a largura toda —
+o layout se adapta, nada quebra. Preencha só com números que você consiga
+defender numa entrevista.
+
 ---
 
 ## 5. Domínio próprio (opcional)
