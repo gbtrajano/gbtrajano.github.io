@@ -89,9 +89,8 @@ export function Projects() {
               </ul>
 
               {/*
-                Só existe link para o projeto publicado. Não há botão de código:
-                os repositórios são privados, então o link daria 404. Projetos
-                sem `href` (desktop, uso interno) ficam sem botão nenhum.
+                O botão só aparece quando o projeto possui uma página pública.
+                Projetos sem `href` ficam sem botão.
               */}
               {projeto.href && (
                 <div className="mt-5 border-t border-neutral-200/80 pt-4 dark:border-neutral-800">

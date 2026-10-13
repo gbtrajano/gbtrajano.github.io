@@ -29,8 +29,7 @@ export type Project = {
   /**
    * Link do projeto publicado (opcional).
    *
-   * Não existe campo para o repositório de propósito: os repositórios são
-   * privados, então um link para o código daria 404 para quem visita.
+   * Projetos sem uma página pública podem deixar este campo de fora.
    */
   href?: string;
   /** Marque como true para dar destaque visual no card. */
@@ -94,14 +93,11 @@ export type Site = {
  * e o link dela no menu NÃO aparecem — melhor não mostrar nada do que mostrar
  * placeholder.
  *
- * Os itens abaixo vieram dos seus repositórios do GitHub, com o resumo baseado
- * no README de cada um. REVISE: corte o que não quiser mostrar, ajuste os
- * textos e acrescente o que faltar.
+ * Esta é uma seleção manual dos projetos que devem aparecer no portfólio.
+ * Ajuste os textos, links e a ordem diretamente nesta lista.
  *
- * Os repositórios são privados, então NÃO existe campo de link para o código:
- * o único botão possível é o de ver o projeto publicado. Projetos sem `href`
- * aparecem sem botão nenhum — é o caso de quem roda local ou é aplicativo
- * desktop, como o SimplificaPDV e o OrçaFácil.
+ * O botão "Ver online" aparece apenas quando existe `href`. Projetos sem uma
+ * página publicada, como o OrçaFácil neste momento, ficam sem botão.
  *
  * Campos:
  *   title     nome do projeto                              (obrigatório)
@@ -118,7 +114,16 @@ const projects: Project[] = [
       "Ponto de venda desktop e instalável — não é sistema web. O banco SQLite fica no computador do próprio cliente, sem servidor, e o aplicativo se atualiza sozinho por atualização remota assinada.",
     tags: ["Tauri", "Rust", "React", "TypeScript", "SQLite"],
     year: "2026",
+    href: "https://simplificapdv.netlify.app/",
     featured: true,
+  },
+  {
+    title: "SimplificaOficina",
+    summary:
+      "Sistema de gestão para oficinas mecânicas que reúne clientes, veículos, ordens de serviço, estoque e financeiro em um só lugar.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    year: "2026",
+    href: "https://simplificaoficina.netlify.app/",
   },
   {
     title: "Ateliê — E-commerce de moda",
@@ -144,34 +149,20 @@ const projects: Project[] = [
     href: "https://frevo-os.vercel.app",
   },
   {
-    title: "Músicas Potenza",
-    summary:
-      "Reprodutor de música para loja com painel de controle remoto: o operador troca a faixa de onde estiver e o player em tela cheia da loja atualiza na hora, via Socket.IO.",
-    tags: ["Node.js", "Express", "Socket.IO", "JavaScript"],
-    year: "2026",
-  },
-  {
-    title: "Potenza TI — Inventário",
-    summary:
-      "Inventário de T.I com banco de dados local: dashboard com estatísticas, filtros por loja, tipo e departamento, e backup do banco pela própria interface.",
-    tags: ["Next.js", "TypeScript", "SQLite"],
-    year: "2026",
-    href: "https://inventory-test-kappa.vercel.app",
-  },
-  {
-    title: "Arcana — Cursos de tarô",
-    summary:
-      "Plataforma de cursos com catálogo, página de vendas, checkout por Mercado Pago ou Stripe e área do aluno. Autenticação, dados e arquivos no Supabase.",
-    tags: ["Next.js", "TypeScript", "Supabase", "Bun"],
-    year: "2026",
-    href: "https://tarot-bruna.vercel.app",
-  },
-  {
     title: "Calculadora de Combustível",
     summary:
       "Calculadora que estima o custo de uma viagem a partir da distância, do consumo médio do veículo e do preço do litro, com opção de ida e volta. Feita em HTML, CSS e JavaScript puros.",
     tags: ["HTML", "CSS", "JavaScript"],
     year: "2024",
+    href: "https://calculoconsumo.netlify.app/",
+  },
+  {
+    title: "Supply Sistemas",
+    summary:
+      "Site institucional de uma empresa de software sob medida, apresentando serviços, projetos, equipe e canais de contato em uma experiência responsiva.",
+    tags: ["HTML", "Tailwind CSS", "JavaScript"],
+    year: "2026",
+    href: "https://supplysistemas.netlify.app/",
   },
 ];
 
